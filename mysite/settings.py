@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Diplom',
-        'USER': 'Admin',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
         'PORT': '5432',
     }
 }
@@ -127,3 +127,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # blog_project/settings.py
 LOGIN_REDIRECT_URL = 'home'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
